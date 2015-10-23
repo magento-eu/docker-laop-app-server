@@ -16,6 +16,10 @@ RUN ln -s /usr/local/instantclient_12_1 /usr/local/instantclient && \
     ln -s /usr/local/instantclient/libclntsh.so.12.1 /usr/local/instantclient/libclntsh.so && \
     ln -s /usr/local/instantclient/sqlplus /usr/bin/sqlplus
 
+ENV LD_LIBRARY_PATH /usr/local/instantclient
+ENV TNS_ADMIN       /usr/local/instantclient
+ENV ORACLE_BASE     /usr/local/instantclient
+ENV ORACLE_HOME     /usr/local/instantclient
 
 RUN echo 'instantclient,/usr/local/instantclient' | pecl install oci8
 
